@@ -3,6 +3,8 @@ import com.example.eventapp.dtos.EvenementDTO;
 import com.example.eventapp.mapper.EvenementMapper;
 import com.example.eventapp.models.Evenement;
 import com.example.eventapp.repository.EvenementRepository;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -12,8 +14,8 @@ import java.util.stream.Collectors;
 @Service
 public class EvenementService {
 
-    private final EvenementRepository evenementRepository;
 
+    private final EvenementRepository evenementRepository;
     public EvenementService(EvenementRepository evenementRepository) {
         this.evenementRepository = evenementRepository;
     }
@@ -23,7 +25,7 @@ public class EvenementService {
         return EvenementMapper.toDTO(saved);
     }
 
-    public EvenementDTO modifier(Long id, Evenement evenementMisAJour) {
+     public EvenementDTO modifier(Long id, Evenement evenementMisAJour) {
         return evenementRepository.findById(id).map(evenement -> {
             evenement.setTitre(evenementMisAJour.getTitre());
             evenement.setDate(evenementMisAJour.getDate());

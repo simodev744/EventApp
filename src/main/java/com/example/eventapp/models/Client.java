@@ -5,8 +5,6 @@ import jakarta.persistence.Entity;
 import lombok.*;
 
 @Entity
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(callSuper = true)

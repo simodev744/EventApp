@@ -2,8 +2,7 @@ package com.example.eventapp.dtos;
 
 import lombok.*;
 
-@Getter
-@Setter
+
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(callSuper = true)
